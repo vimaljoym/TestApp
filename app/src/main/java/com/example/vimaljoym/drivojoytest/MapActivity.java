@@ -37,8 +37,10 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
 
@@ -213,6 +215,8 @@ public class MapActivity extends BaseNavigation implements OnMapReadyCallback, G
                     .fillColor(Color.parseColor("#87CEFA"))
                     .strokeWidth(1)
                     .strokeColor(Color.BLUE));
+
+            googleMap.addMarker(new MarkerOptions().position(new LatLng(latitude,longitude)).icon(BitmapDescriptorFactory.fromResource(R.drawable.marker)));
 
 
             //add geofence
